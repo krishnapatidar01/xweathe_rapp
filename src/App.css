@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.search input {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search button {
+  padding: 8px 12px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.weather-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
