@@ -1,16 +1,26 @@
 import React from "react";
-import "./WeatherCard.css";
+import "./WeatherCard.css"; // optional for styling
 
 function WeatherCard({ data }) {
-  const { location, current } = data;
   return (
-    <div className="weather-card">
-      <h2>{location.name}, {location.country}</h2>
-      <p>Temperature: {current.temp_c}°C</p>
-      <p>Humidity: {current.humidity}%</p>
-      <p>Condition: {current.condition.text}</p>
-      <p>Wind Speed: {current.wind_kph} kph</p>
-    </div>
+    <>
+      <div className="weather-card">
+        <h3>Temperature</h3>
+        <p>{data.current.temp_c} °C</p>
+      </div>
+      <div className="weather-card">
+        <h3>Humidity</h3>
+        <p>{data.current.humidity} %</p>
+      </div>
+      <div className="weather-card">
+        <h3>Condition</h3>
+        <p>{data.current.condition.text}</p>
+      </div>
+      <div className="weather-card">
+        <h3>Wind Speed</h3>
+        <p>{data.current.wind_kph} kph</p>
+      </div>
+    </>
   );
 }
 

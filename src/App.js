@@ -1,52 +1,27 @@
- import React, { useState } from "react";
-import WeatherCard from "./components/WeatherCard";
-import "./App.css";
+import React from "react";
+// import "WeatherCard.css"; 
 
-function App() {
-  const [city, setCity] = useState("");
-  const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const fetchWeather = async () => {
-    if (!city) return;
-    setLoading(true);
-    setWeather(null);
-    try {
-      const res = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=76f50a8fc19846dc902151014253105&q=${city}`
-      );
-      const data = await res.json();
-
-      if (data && data.location) {
-        setWeather(data);
-      } else {
-        alert("Failed to fetch weather data");
-      }
-    } catch (err) {
-      alert("Failed to fetch weather data");
-    } finally {
-      setLoading(false);
-    }
-  };
-
+function WeatherCard({ data }) {
   return (
-    <div className="App">
-      <h1>XWeatherApp</h1>
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Enter city name"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button onClick={fetchWeather}>Search</button>
+    <>
+      <div className="weather-card">
+        <h3>Temperature</h3>
+        <p>{data.current.temp_c} °C</p>
       </div>
-      {loading && <p>Loading data…</p>}
-      <div className="weather-cards">
-        {weather && <WeatherCard data={weather} />}
+      <div className="weather-card">
+        <h3>Humidity</h3>
+        <p>{data.current.humidity} %</p>
       </div>
-    </div>
+      <div className="weather-card">
+        <h3>Condition</h3>
+        <p>{data.current.condition.text}</p>
+      </div>
+      <div className="weather-card">
+        <h3>Wind Speed</h3>
+        <p>{data.current.wind_kph} kph</p>
+      </div>
+    </>
   );
 }
 
-export default App;
+export default WeatherCard;
