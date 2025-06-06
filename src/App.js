@@ -1,5 +1,5 @@
 import React from "react";
-// import "WeatherCard.css"; 
+
 
 function WeatherCard({ data }) {
   return (
