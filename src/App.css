@@ -1,26 +1,41 @@
-/* .App {
+*{
+   background-color: rgb(219, 255, 246);
+}
+.App {
   text-align: center;
   padding: 20px;
+  
+  
 }
 
 .search input {
   padding: 8px;
   font-size: 16px;
+  border: none;
+  background-color: white;
+  border-radius: 3px;
 }
+
 
 .search button {
   padding: 8px 12px;
   margin-left: 10px;
   font-size: 16px;
   cursor: pointer;
+  background-color:rgb(13, 184, 13) ;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+
 }
 
 .weather-card {
-  border: 1px solid #ccc;
+  border:none;
   border-radius: 10px;
   padding: 1rem;
   margin: 0.5rem;
-  background-color: #f9f9f9;
+  background-color:white;
   width: 200px;
   text-align: center;
 }
@@ -30,4 +45,9 @@
   justify-content: center;
   gap: 1rem;
 }
- */
+h3,p{
+  background-color: white;
+}
+
+
+ 
