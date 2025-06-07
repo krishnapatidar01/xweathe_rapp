@@ -41,7 +41,7 @@ function App() {
         />
         <button aria-label="Unzoom image" data-rmiz-btn-close="true" onClick={fetchWeather}>Search</button>
       </div>
-      {loading && <p>Loading data…</p>}
+      {loading && <p>Loading data...</p> }
       <div className="weather-cards">
         {weather && <WeatherCard data={weather} />}
       </div>
